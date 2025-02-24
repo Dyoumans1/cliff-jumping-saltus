@@ -38,7 +38,7 @@ router.post('/sign-up', async (req, res) => {
     // All ready to create the new user!
     await User.create(req.body);
   
-    res.redirect('/auth/sign-in');
+    res.redirect('/spots');
   } catch (error) {
     console.log(error);
     res.redirect('/');
@@ -70,7 +70,7 @@ router.post('/sign-in', async (req, res) => {
       _id: userInDatabase._id
     };
   
-    res.redirect('/');
+    res.redirect('/spots');
   } catch (error) {
     console.log(error);
     res.redirect('/');

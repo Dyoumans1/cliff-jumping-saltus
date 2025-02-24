@@ -1,11 +1,11 @@
 <nav>
-    <a href="/">Home</a>
-    <a href="/spots">Spots</a>
-
     <% if(user) { %>
-        <a href="/profile">Profile</a>
-        <% } else { %>
-            <a href="/auth/sign-in">Login</a>
-            <a href="/auth/sign-up">Sign Up</a>
-            <% } %>
+            <a href="/spots">All Spots</a>
+            <a href="/spots/new">Add New Spot</a>
+            <a href="/profile">My Profile</a>
+            <a href="/auth/logout">Logout</a>
+          <% } else { %>
+            <a href="/auth/login">Login</a>
+            <a href="/auth/signup">Sign Up</a>
+          <% } %>
 </nav>

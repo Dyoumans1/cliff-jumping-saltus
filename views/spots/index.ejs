@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spots</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>All Spots</h1>
+    <a href="/spots/new">Add New Spot</a>
+    <% if (spots && spots.length > 0) { %>
+      <% spots.forEach(spot => { %>
+        <p><a href="/spots/<%= spot._id %>"><%= spot.name %></a></p>
+      <% }) %>
+  <% } else { %>
+      <p>You have not created any Spots yet.</p>
+  <% } %>
+</body>
+</html>

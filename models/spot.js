@@ -13,7 +13,7 @@ user_id: {
 
 },
 name: {
-    type: string,
+    type: String,
     required: true
 },
 state: {
@@ -47,7 +47,7 @@ longitude: {
     required: true
 },
 photo: {
-    type: string
+    type: String
 }
 }, {
     timestamps: true
