@@ -17,12 +17,17 @@ router.get('/', async (req, res) => {
 
   router.post('/', async (req, res) => {
     const spot = new Spot(req.body);
-    spot.user_id = req.session.user_id;
+    spot.user_id = req.session.user._id;
+    spot.safe_for_jumping = req.body.safe_for_jumping === 'true';
     await spot.save();
     res.redirect('/spots');
   });
 
-
+  router.get('/:id', async (req, res) => {
+    const spot = await Spot.findById(req.params.id);
+    const isOwner = spot.user_id.toString() === req.session.user._id.toString();
+    res.render('spots/show.ejs', { spot, isOwner });
+  });
 
 
 module.exports = router;
