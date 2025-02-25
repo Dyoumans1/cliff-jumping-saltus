@@ -11,7 +11,8 @@ const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const authController = require('./controllers/auth.js');
-const spotsController = require('./controllers/spots.js')
+const spotsController = require('./controllers/spots.js');
+const profileController = require('./controllers/profile.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -48,6 +49,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/spots', isSignedIn, spotsController);
+app.use('/profile', isSignedIn, profileController);
 
 
 app.listen(port, () => {

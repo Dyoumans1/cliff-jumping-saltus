@@ -6,7 +6,7 @@ const Spot = require('../models/spot.js');
 
 
 router.get('/', async (req, res) => {
-    const spots = await Spot.find({ user_id: req.session.user._id})
+    const spots = await Spot.find({})
     res.render('spots/index.ejs', { spots });
   });
 
