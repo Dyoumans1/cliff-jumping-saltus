@@ -69,10 +69,16 @@
             <option value="WY" <%= spot.state === 'WY' ? 'selected' : '' %>>Wyoming</option>
         </select>
 
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="<%= spot.city %>" required>
+
+        <label for="directions">Directions:</label>
+        <textarea id="directions" name="directions" required><%= spot.directions %></textarea>
+
         <label for="description">Description:</label>
         <textarea id="description" name="description"><%= spot.description %></textarea>
 
-        <label for="height">Height (in freedom units):</label>
+        <label for="height">Height (ft):</label>
         <input type="number" id="height" name="height" value="<%= spot.height %>" required min="0">
 
         <label for="difficulty">Difficulty:</label>
@@ -85,12 +91,6 @@
 
         <label for="safe_for_jumping">Safe for Jumping:</label>
         <input type="checkbox" id="safe_for_jumping" name="safe_for_jumping" value="true" <%= spot.safe_for_jumping ? 'checked' : '' %>>
-
-        <label for="latitude">Latitude:</label>
-        <input type="number" id="latitude" name="latitude" value="<%= spot.latitude %>" required min="-90" max="90" step="0.0001">
-
-        <label for="longitude">Longitude:</label>
-        <input type="number" id="longitude" name="longitude" value="<%= spot.longitude %>" required min="-180" max="180" step="0.0001">
 
         <label for="photo">Photo URL:</label>
         <input type="text" id="photo" name="photo" value="<%= spot.photo %>">

@@ -20,6 +20,14 @@ state: {
     type: String,
     required: true
 },
+city: {
+    type: String,
+    required: true
+},
+directions: {
+    type: String,
+    required: true
+},
 description: {
     type: String,
     required: true
@@ -38,14 +46,7 @@ safe_for_jumping: {
     required: true,
     default: false
 },
-latitude: {
-    type: Number,
-    required: true
-},
-longitude: {
-    type: Number,
-    required: true
-},
+
 photo: {
     type: String
 }
