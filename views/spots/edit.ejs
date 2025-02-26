@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Spot</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    
+    <h1>Edit Cliff Spot</h1>
+
+    <form action="/spots/<%= spot._id %>?_method=PUT" method="POST">
+        <label for="name">Spot Name:</label>
+        <input type="text" id="name" name="name" value="<%= spot.name %>" required>
+
+        <label for="state">State:</label>
+        <select id="state" name="state" required>
+            <option value="" disabled>Select a state</option>
+            <option value="AL" <%= spot.state === 'AL' ? 'selected' : '' %>>Alabama</option>
+            <option value="AK" <%= spot.state === 'AK' ? 'selected' : '' %>>Alaska</option>
+            <option value="AZ" <%= spot.state === 'AZ' ? 'selected' : '' %>>Arizona</option>
+            <option value="AR" <%= spot.state === 'AR' ? 'selected' : '' %>>Arkansas</option>
+            <option value="CA" <%= spot.state === 'CA' ? 'selected' : '' %>>California</option>
+            <option value="CO" <%= spot.state === 'CO' ? 'selected' : '' %>>Colorado</option>
+            <option value="CT" <%= spot.state === 'CT' ? 'selected' : '' %>>Connecticut</option>
+            <option value="DE" <%= spot.state === 'DE' ? 'selected' : '' %>>Delaware</option>
+            <option value="FL" <%= spot.state === 'FL' ? 'selected' : '' %>>Florida</option>
+            <option value="GA" <%= spot.state === 'GA' ? 'selected' : '' %>>Georgia</option>
+            <option value="HI" <%= spot.state === 'HI' ? 'selected' : '' %>>Hawaii</option>
+            <option value="ID" <%= spot.state === 'ID' ? 'selected' : '' %>>Idaho</option>
+            <option value="IL" <%= spot.state === 'IL' ? 'selected' : '' %>>Illinois</option>
+            <option value="IN" <%= spot.state === 'IN' ? 'selected' : '' %>>Indiana</option>
+            <option value="IA" <%= spot.state === 'IA' ? 'selected' : '' %>>Iowa</option>
+            <option value="KS" <%= spot.state === 'KS' ? 'selected' : '' %>>Kansas</option>
+            <option value="KY" <%= spot.state === 'KY' ? 'selected' : '' %>>Kentucky</option>
+            <option value="LA" <%= spot.state === 'LA' ? 'selected' : '' %>>Louisiana</option>
+            <option value="ME" <%= spot.state === 'ME' ? 'selected' : '' %>>Maine</option>
+            <option value="MD" <%= spot.state === 'MD' ? 'selected' : '' %>>Maryland</option>
+            <option value="MA" <%= spot.state === 'MA' ? 'selected' : '' %>>Massachusetts</option>
+            <option value="MI" <%= spot.state === 'MI' ? 'selected' : '' %>>Michigan</option>
+            <option value="MN" <%= spot.state === 'MN' ? 'selected' : '' %>>Minnesota</option>
+            <option value="MS" <%= spot.state === 'MS' ? 'selected' : '' %>>Mississippi</option>
+            <option value="MO" <%= spot.state === 'MO' ? 'selected' : '' %>>Missouri</option>
+            <option value="MT" <%= spot.state === 'MT' ? 'selected' : '' %>>Montana</option>
+            <option value="NE" <%= spot.state === 'NE' ? 'selected' : '' %>>Nebraska</option>
+            <option value="NV" <%= spot.state === 'NV' ? 'selected' : '' %>>Nevada</option>
+            <option value="NH" <%= spot.state === 'NH' ? 'selected' : '' %>>New Hampshire</option>
+            <option value="NJ" <%= spot.state === 'NJ' ? 'selected' : '' %>>New Jersey</option>
+            <option value="NM" <%= spot.state === 'NM' ? 'selected' : '' %>>New Mexico</option>
+            <option value="NY" <%= spot.state === 'NY' ? 'selected' : '' %>>New York</option>
+            <option value="NC" <%= spot.state === 'NC' ? 'selected' : '' %>>North Carolina</option>
+            <option value="ND" <%= spot.state === 'ND' ? 'selected' : '' %>>North Dakota</option>
+            <option value="OH" <%= spot.state === 'OH' ? 'selected' : '' %>>Ohio</option>
+            <option value="OK" <%= spot.state === 'OK' ? 'selected' : '' %>>Oklahoma</option>
+            <option value="OR" <%= spot.state === 'OR' ? 'selected' : '' %>>Oregon</option>
+            <option value="PA" <%= spot.state === 'PA' ? 'selected' : '' %>>Pennsylvania</option>
+            <option value="RI" <%= spot.state === 'RI' ? 'selected' : '' %>>Rhode Island</option>
+            <option value="SC" <%= spot.state === 'SC' ? 'selected' : '' %>>South Carolina</option>
+            <option value="SD" <%= spot.state === 'SD' ? 'selected' : '' %>>South Dakota</option>
+            <option value="TN" <%= spot.state === 'TN' ? 'selected' : '' %>>Tennessee</option>
+            <option value="TX" <%= spot.state === 'TX' ? 'selected' : '' %>>Texas</option>
+            <option value="UT" <%= spot.state === 'UT' ? 'selected' : '' %>>Utah</option>
+            <option value="VT" <%= spot.state === 'VT' ? 'selected' : '' %>>Vermont</option>
+            <option value="VA" <%= spot.state === 'VA' ? 'selected' : '' %>>Virginia</option>
+            <option value="WA" <%= spot.state === 'WA' ? 'selected' : '' %>>Washington</option>
+            <option value="WV" <%= spot.state === 'WV' ? 'selected' : '' %>>West Virginia</option>
+            <option value="WI" <%= spot.state === 'WI' ? 'selected' : '' %>>Wisconsin</option>
+            <option value="WY" <%= spot.state === 'WY' ? 'selected' : '' %>>Wyoming</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"><%= spot.description %></textarea>
+
+        <label for="height">Height (in freedom units):</label>
+        <input type="number" id="height" name="height" value="<%= spot.height %>" required min="0">
+
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" name="difficulty" required>
+            <option value="Easy" <%= spot.difficulty === 'Easy' ? 'selected' : '' %>>Easy</option>
+            <option value="Medium" <%= spot.difficulty === 'Medium' ? 'selected' : '' %>>Medium</option>
+            <option value="Hard" <%= spot.difficulty === 'Hard' ? 'selected' : '' %>>Hard</option>
+            <option value="Pro" <%= spot.difficulty === 'Pro' ? 'selected' : '' %>>Pro</option>
+        </select>
+
+        <label for="safe_for_jumping">Safe for Jumping:</label>
+        <input type="checkbox" id="safe_for_jumping" name="safe_for_jumping" value="true" <%= spot.safe_for_jumping ? 'checked' : '' %>>
+
+        <label for="latitude">Latitude:</label>
+        <input type="number" id="latitude" name="latitude" value="<%= spot.latitude %>" required min="-90" max="90" step="0.0001">
+
+        <label for="longitude">Longitude:</label>
+        <input type="number" id="longitude" name="longitude" value="<%= spot.longitude %>" required min="-180" max="180" step="0.0001">
+
+        <label for="photo">Photo URL:</label>
+        <input type="text" id="photo" name="photo" value="<%= spot.photo %>">
+
+        <button type="submit">Update Spot</button>
+    </form>
+</body>
+</html>

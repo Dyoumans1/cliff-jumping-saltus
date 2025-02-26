@@ -29,5 +29,18 @@ router.get('/', async (req, res) => {
     res.render('spots/show.ejs', { spot, isOwner });
   });
 
+  router.get('/:id/edit', async (req, res) => {
+    const spot = await Spot.findById(req.params.id);
+    res.render('spots/edit.ejs', { spot }) 
+  });
 
+  router.put('/:id', async (req, res) => {
+    await Spot.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect(`/spots/${req.params.id}`);
+  });
+  
+  router.delete('/:id', async (req, res) => {
+    await Spot.findByIdAndDelete(req.params.id);
+    res.redirect('/spots');
+  })
 module.exports = router;

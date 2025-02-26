@@ -1,0 +1,9 @@
+h1 {
+    color: purple;
+    font-size: 10rem; 
+    margin-top: 20vh; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    width: 100%; 
+    text-align: center;
+    padding: 0 20px; 
+}
