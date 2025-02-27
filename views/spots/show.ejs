@@ -9,12 +9,13 @@
 
   <h1><%= spot.name %></h1>
   
-  <p>Location: <%= spot.state %></p>
-  <p>Description: <%= spot.description %></p>
+  <img src="<%= spot.photo %>" alt="<%= spot.name %>">
+  <p>Location: <%= spot.city %>, <%= spot.state %></p>
   <p>Height: <%= spot.height %> feet</p>
   <p>Difficulty: <%= spot.difficulty %></p>
   <p>Safe for Jumping: <%= spot.safe_for_jumping ? 'Yes' : 'No' %></p>
-  <p>Coordinates: <%= spot.latitude %>, <%= spot.longitude %></p>
+  <p>Directions: <%= spot.directions %></p>
+  <p>Description: <%= spot.description %></p>
 
   <a href="/spots">Back to All Spots</a>
   

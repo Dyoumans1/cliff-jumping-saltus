@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/spot-index.css">
     <title>Spots</title>
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>All Spots</h1>
-    <a href="/spots/new">Add New Spot</a>
-    <% if (spots && spots.length > 0) { %>
+  <nav>
+    <a href="/profile">My Profile</a>
+      <a href="/auth/sign-out">Logout</a>
+  </nav>
+  
+  <h1>Locations</h1>
+
+  <div class="buttons">
+    <a href="/spots/new" class="button">New Spot</a>
+  </div>
+    
+
+
+
+  <% if (spots && spots.length > 0) { %>
+    <div class="spots-grid">
       <% spots.forEach(spot => { %>
-        <p><a href="/spots/<%= spot._id %>"><%= spot.name %></a></p>
+        <a href="/spots/<%= spot._id %>" class="card">
+          <img src="<%= spot.photo %>" alt="<%= spot.name %>">
+          <div class="card-info">
+            <div class="name"><%= spot.name %></div>
+            <div class="location"><%= spot.city %>, <%= spot.state %></div>
+          </div>
+        </a>
       <% }) %>
+    </div>
   <% } else { %>
-      <p>You have not created any Spots yet.</p>
+    <p class="empty">You have not created any Spots yet.</p>
   <% } %>
 </body>
 </html>
