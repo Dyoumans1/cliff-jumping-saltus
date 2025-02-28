@@ -3,7 +3,7 @@
 ![CliffJump](public/images/screenshot.png)
 
 ## Description
-Cliff Jumping Saltus is a full-stack web application designed for adventure enthusiasts to discover and share cliff jumping spots. Users can create profiles, add new jumping locations, browse existing spots, and mark locations as safe or unsafe for jumping. This platform aims to build a community of cliff jumpers who can share their experiences and help others find safe and exciting locations.
+CliffJump is a full-stack web application designed for adventure enthusiasts to discover and share cliff jumping spots. Users can create profiles, add new jumping locations, browse existing spots, and mark locations as safe or unsafe for jumping. This platform aims to build a community of cliff jumpers who can share their experiences and help others find safe and exciting locations.
 
 I built this application to combine my passion for outdoor adventures with web development, creating a centralized resource for cliff jumping enthusiasts that prioritizes safety and community knowledge sharing.
 
