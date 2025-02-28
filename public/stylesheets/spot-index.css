@@ -1,6 +1,6 @@
 body {
     background-color: #f5f7fa;
-    max-width: 1200px;
+    max-width: auto;
     margin: 0 auto;
 }
 
@@ -34,25 +34,29 @@ h1 {
 }
 
 .button {
-    background-color: lightblue;
-    color: black;
-    padding: 8px;
-    border: 1px solid gray;
-    border-radius: 15px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
     margin-right: 30px;
     text-decoration: solid;
     font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .button:hover {
-
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .spots-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .card {
@@ -63,6 +67,7 @@ h1 {
     border-radius: 10px;
     text-decoration: solid;
     color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     
 }
 
@@ -70,4 +75,9 @@ h1 {
     width: 100%;
     height: auto;
     border-radius: 10px 10px 0 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }

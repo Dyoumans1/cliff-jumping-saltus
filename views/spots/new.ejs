@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/form.css">
     <title>New Spots</title>
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
+    <nav>
+        <a href="/spots">All Spots</a>
+        <div class="right-links">
+            <a href="/profile">My Profile</a>
+            <a href="/auth/sign-out">Logout</a>
+        </div>
+    </nav>
     
     <h1>Add New Cliff Spot</h1>
 
