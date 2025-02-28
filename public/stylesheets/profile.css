@@ -38,3 +38,39 @@ h2 {
     margin-top: 0;
     width: 100%;
 }
+
+.spots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    width: 600px;
+    border: 2px solid lightgray;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-decoration: solid;
+    color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+img.no-img {
+    width: 40%;
+    height: auto;
+    align-items: center;
+}

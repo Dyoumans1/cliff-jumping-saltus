@@ -17,22 +17,20 @@
   <section>
     <h2>Your Spots</h2>
     <% if (spots.length === 0) { %>
-      <p>You have no spots yet.</p>
+        <p>You have no spots yet.</p>
     <% } else { %>
-      <ul>
-        <% spots.forEach(spot => { %>
-          <li>
-            <a href="/spots/<%= spot._id %>"><%= spot.name %></a>
-            <form action="/spots/<%= spot._id %>/edit" method="GET">
-              <button type="submit">Edit Spot</button>
-            </form>
-            <form action="/spots/<%= spot._id %>?_method=DELETE" method="POST" style="display:inline;">
-              <button type="submit">Delete</button>
-            </form>
-          </li>
-        <% }) %>
-      </ul>
+        <div class="spots-grid">
+            <% spots.forEach(spot => { %>
+                <a href="/spots/<%= spot._id %>" class="card">
+                    <img src="<%= spot.photo || '/images/no-img.png' %>" alt="<%= spot.name %>" class="<%= spot.photo ? '' : 'no-img' %>">
+                    <div class="card-info">
+                        <div class="name"><%= spot.name %></div>
+                        <div class="location"><%= spot.city %>, <%= spot.state %></div>
+                    </div>
+                </a>
+            <% }) %>
+        </div>
     <% } %>
-  </section>
+</section>
 </body>
 </html>
