@@ -54,6 +54,8 @@ img.no-img {
     margin: 8px 0;
     background-color: #ffffff;
     border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    border-left: 4px solid #2c3e50;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
  }
 
@@ -68,7 +70,7 @@ img.no-img {
     font-weight: bold;
  }
 
- .button:hover {
+ button:hover {
     background-color: #2980b9;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
