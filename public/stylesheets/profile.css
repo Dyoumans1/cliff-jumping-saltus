@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f7fa;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2c3e50;
+    margin-bottom: 0;
+    padding: 20px;
+    width: 100%;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    background-color: #333;
+    color: white;
+    margin-top: 0;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 100px;
+    margin-top: 0;
+    width: 100%;
+}

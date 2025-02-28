@@ -5,11 +5,17 @@
   <link rel="stylesheet" href="/stylesheets/show-page.css">
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
+  <nav>
+    <a href="/spots">All Spots</a>
+    <div class="right-links">
+        <a href="/profile">My Profile</a>
+        <a href="/auth/sign-out">Logout</a>
+    </div>
+</nav>
 
   <h1><%= spot.name %></h1>
   
-  <img src="<%= spot.photo %>" alt="<%= spot.name %>">
+  <img src="<%= spot.photo || '/images/no-img.png' %>" alt="<%= spot.name %>" class="<%= spot.photo ? '' : 'no-img' %>">
   <p>Location: <%= spot.city %>, <%= spot.state %></p>
   <p>Height: <%= spot.height %> feet</p>
   <p>Difficulty: <%= spot.difficulty %></p>
@@ -17,11 +23,10 @@
   <p>Directions: <%= spot.directions %></p>
   <p>Description: <%= spot.description %></p>
 
-  <a href="/spots">Back to All Spots</a>
-  
   <% if (isOwner) { %>
-    <a href="/spots/<%= spot._id %>/edit">Edit Spot</a>
-    
+    <form action="/spots/<%= spot._id %>/edit" method="GET">
+      <button type="submit">Edit Spot</button>
+    </form>
     <form action="/spots/<%= spot._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete Spot</button>
     </form>

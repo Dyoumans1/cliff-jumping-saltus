@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile - <%= username %></title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/stylesheets/profile.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome, <%= username %>!</h1>
-    <%- include('../partials/_navbar.ejs') %>
-    <a href="/auth/sign-out">Logout</a>
+  <nav>
     <a href="/spots">All Spots</a>
-  </header>
+    <a href="/auth/sign-out">Logout</a>
+  </nav>
+
+  <h1>Welcome, <%= username %>!</h1>
 
   <section>
     <h2>Your Spots</h2>
@@ -23,7 +23,9 @@
         <% spots.forEach(spot => { %>
           <li>
             <a href="/spots/<%= spot._id %>"><%= spot.name %></a>
-            <a href="/spots/<%= spot._id %>/edit">Edit</a>
+            <form action="/spots/<%= spot._id %>/edit" method="GET">
+              <button type="submit">Edit Spot</button>
+            </form>
             <form action="/spots/<%= spot._id %>?_method=DELETE" method="POST" style="display:inline;">
               <button type="submit">Delete</button>
             </form>
